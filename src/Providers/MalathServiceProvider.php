@@ -9,15 +9,15 @@ class MalathServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([__DIR__ . '/config/malath.php' => config_path('malath.php'),],'malath');
-
-        $this->app->singleton('Malath', function () {
-            return new SmsProcess();
-        });
+        $this->publishes([__DIR__ . '/../config/malath.php' => config_path('malath.php'),],'malath');
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/malath.php','malath');
+        $this->app->singleton('Malath', function () {
+            return new SmsProcess();
+        });
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/malath.php','malath');
     }
 }
