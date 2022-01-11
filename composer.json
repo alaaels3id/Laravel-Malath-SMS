@@ -1,0 +1,29 @@
+{
+    "name": "alaaelsaid/laravel-malath-sms",
+    "description": "This package is to integrate with malath sms",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alaaelsaid\\LaravelMalathSms\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Alaa Elsaid",
+            "email": "alaa4cat@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alaaelsaid\\LaravelMalathSms\\MalathServiceProvider"
+            ],
+            "aliases": {
+                "Malath": "Alaaelsaid\\LaravelMalathSms\\Malath"
+            }
+        }
+    }
+}
