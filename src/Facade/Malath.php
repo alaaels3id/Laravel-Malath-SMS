@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static send($number, $message)
  *
- * @see \SmsProcess
+ * @see SmsProcess
  */
 
 class Malath extends Facade
