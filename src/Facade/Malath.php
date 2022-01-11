@@ -19,6 +19,6 @@ class Malath extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'malath';
+        return 'Malath';
     }
 }
