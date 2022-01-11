@@ -22,7 +22,7 @@
                 "Alaaelsaid\\LaravelMalathSms\\MalathServiceProvider"
             ],
             "aliases": {
-                "Malath": "Alaaelsaid\\LaravelMalathSms\\Malath"
+                "Malath": "Alaaelsaid\\LaravelMalathSms\\Facade\\Malath"
             }
         }
     }
