@@ -2,7 +2,7 @@
 
 namespace Alaaelsaid\LaravelMalathSms\Providers;
 
-use SmsProcess;
+use Alaaelsaid\LaravelMalathSms\Facade\SmsProcess;
 use Illuminate\Support\ServiceProvider;
 
 class MalathServiceProvider extends ServiceProvider

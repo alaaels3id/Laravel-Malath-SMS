@@ -1,5 +1,7 @@
 <?php
 
+namespace Alaaelsaid\LaravelMalathSms\Facade;
+
 use Illuminate\Support\Facades\Http;
 
 class SmsProcess
