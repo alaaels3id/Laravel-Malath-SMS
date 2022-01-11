@@ -15,7 +15,9 @@
             "email": "alaa4cat@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": "^7.4"
+    },
     "extra": {
         "laravel": {
             "providers": [
