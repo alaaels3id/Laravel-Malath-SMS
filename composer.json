@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Alaaelsaid\\LaravelMalathSms\\MalathServiceProvider"
+                "Alaaelsaid\\LaravelMalathSms\\Providers\\MalathServiceProvider"
             ],
             "aliases": {
                 "Malath": "Alaaelsaid\\LaravelMalathSms\\Facade\\Malath"
