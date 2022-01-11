@@ -8,7 +8,7 @@
             "Alaaelsaid\\LaravelMalathSms\\": "src/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Alaa Elsaid",
