@@ -1,6 +1,7 @@
 {
     "name": "alaaelsaid/laravel-malath-sms",
     "description": "This package is to integrate with malath sms",
+    "keywords": ["sms", "malath"],
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -8,7 +9,6 @@
             "Alaaelsaid\\LaravelMalathSms\\": "src/"
         }
     },
-    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Alaa Elsaid",
@@ -30,5 +30,7 @@
                 "Malath": "Alaaelsaid\\LaravelMalathSms\\Facade\\Malath"
             }
         }
-    }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "stable"
 }
