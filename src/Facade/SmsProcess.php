@@ -62,6 +62,10 @@ class SmsProcess
                 return "SMS Text Grater that 6 part .";
                 break;
 
+            case 1011:
+                return "There is a wrong content in the link";
+                break;
+
             default:
                 return "Unknown Error !.";
         }
