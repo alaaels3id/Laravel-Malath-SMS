@@ -5,7 +5,7 @@
 You can install the package via [Composer](https://getcomposer.org).
 
 ```bash
-composer require alaaels3id/laravel-malath-sms
+composer require alaaelsaid/laravel-malath-sms
 ```
 ## Publishing
 

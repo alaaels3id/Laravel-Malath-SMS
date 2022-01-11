@@ -2,8 +2,8 @@
 
 namespace Alaaelsaid\LaravelMalathSms\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use SmsProcess;
+use Illuminate\Support\ServiceProvider;
 
 class MalathServiceProvider extends ServiceProvider
 {
@@ -14,9 +14,7 @@ class MalathServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton('Malath', function () {
-            return new SmsProcess();
-        });
+        $this->app->singleton('Malath', fn() => new SmsProcess());
 
         $this->mergeConfigFrom(__DIR__ . '/../config/malath.php','malath');
     }
