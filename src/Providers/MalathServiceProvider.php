@@ -9,7 +9,9 @@ class MalathServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([__DIR__ . '/../../config/malath.php' => config_path('malath.php')],'malath');
+        $this->publishes([
+            __DIR__ . '/../../config/malath.php' => config_path('malath.php'),
+        ],'malath');
     }
 
     public function register()
