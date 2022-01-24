@@ -12,7 +12,7 @@ composer require alaaelsaid/laravel-malath-sms
 After install publish file config
 
 ```bash
-php artisan vendor:publish --provider="Alaaelsaid\LaravelMalathSms\Providers\MalathServiceProvider"
+php artisan vendor:publish --tag="malath"
 ```
 
 ## Usage
