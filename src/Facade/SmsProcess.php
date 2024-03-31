@@ -11,91 +11,59 @@ class SmsProcess
      * @param $message
      * @return array
      */
-    public static function send($number, $message)
+    public function send($number, $message): array
     {
-        $data = self::malathData(config('malath.username'), config('malath.password'), $number, config('malath.sender_name'), $message);
+        $data = $this->malathData($number, $message);
 
         $result = Http::get('http://sms.malath.net.sa/httpSmsProvider.aspx', $data);
 
         $code = (integer)str_replace(" ","", $result);
 
-        return ['code' => $code, 'message' => self::get_malath_message_by_code($code)];
+        return ['code' => $code, 'message' => $this->getMessage($code)];
     }
 
     /**
      * @param $code
      * @return string
      */
-    private static function get_malath_message_by_code($code)
+    private function getMessage($code): string
     {
-        switch ($code)
-        {
-            case 0:
-                return "Message send successfully";
-                break;
-
-            case 101:
-                return "Parameter are missing";
-                break;
-
-            case 104:
-                return "Either user name or password are missing or your Account is on hold.";
-                break;
-
-            case 105:
-                return "Credit are not available.";
-                break;
-
-            case 106:
-                return "Wrong Unicode.";
-                break;
-
-            case 107:
-                return "Blocked Sender Name.";
-                break;
-
-            case 108:
-                return "Missing Sender name.";
-                break;
-
-            case 1010:
-                return "SMS Text Grater that 6 part .";
-                break;
-
-            case 1011:
-                return "There is a wrong content in the link";
-                break;
-
-            default:
-                return "Unknown Error !.";
-        }
+        return match ($code) {
+            0       => "Message send successfully",
+            101     => "Parameter are missing",
+            104     => "Either user name or password are missing or your Account is on hold.",
+            105     => "Credit are not available.",
+            106     => "Wrong Unicode.",
+            107     => "Blocked Sender Name.",
+            108     => "Missing Sender name.",
+            1010    => "SMS Text Grater that 6 part .",
+            1011    => "There is a wrong content in the link",
+            default => "Unknown Error !.",
+        };
     }
 
     /**
      * @return int[]
      */
-    private static function malathErrorCodes()
+    private static function malathErrorCodes(): array
     {
         return [101, 104, 105, 106, 107, 108, 1010];
     }
 
     /**
-     * @param $username
-     * @param $password
      * @param $number
-     * @param $sms_sender
      * @param $message
      * @return array
      */
-    private static function malathData($username, $password, $number, $sms_sender, $message)
+    private static function malathData($number, $message): array
     {
         return [
-            'username' => $username,
-            'password' => $password,
+            'username' => config('malath.username'),
+            'password' => config('malath.password'),
             'mobile'   => $number,
             'unicode'  => 'none',
             'message'  => $message,
-            'sender'   => $sms_sender,
+            'sender'   => config('malath.sender_name'),
         ];
     }
 }

@@ -7,14 +7,14 @@ use Alaaelsaid\LaravelMalathSms\Facade\SmsProcess;
 
 class MalathServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__ . '/../../config/malath.php' => config_path('malath.php'),
         ],'malath');
     }
 
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('Malath', fn() => new SmsProcess());
 
