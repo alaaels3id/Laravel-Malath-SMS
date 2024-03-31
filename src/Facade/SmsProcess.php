@@ -45,7 +45,7 @@ class SmsProcess
     /**
      * @return int[]
      */
-    private static function malathErrorCodes(): array
+    private function malathErrorCodes(): array
     {
         return [101, 104, 105, 106, 107, 108, 1010];
     }
@@ -55,7 +55,7 @@ class SmsProcess
      * @param $message
      * @return array
      */
-    private static function malathData($number, $message): array
+    private function malathData($number, $message): array
     {
         return [
             'username' => config('malath.username'),
