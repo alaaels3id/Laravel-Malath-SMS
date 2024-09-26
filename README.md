@@ -20,4 +20,8 @@ php artisan vendor:publish --tag="malath"
 ```php
 use Alaaelsaid\LaravelMalathSms\Facade\Malath;
 
+// singel number
 Malath::send('9665xxxxxxxx', 'hello, world !');
+
+// multi number
+Malath::send(['9665xxxxxxxx', '9665xxxxxxxx', '...'], 'hello, world !');

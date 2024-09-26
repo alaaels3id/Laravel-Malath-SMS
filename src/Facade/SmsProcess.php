@@ -13,9 +13,11 @@ class SmsProcess
      */
     public function send($number, $message): array
     {
+        $number = is_array($number) ? implode(',', $number) : $number;
+
         $data = $this->malathData($number, $message);
 
-        $result = Http::get('http://sms.malath.net.sa/httpSmsProvider.aspx', $data);
+        $result = Http::get('https://sms.malath.net.sa/httpSmsProvider.aspx', $data);
 
         $code = (integer)str_replace(" ","", $result);
 

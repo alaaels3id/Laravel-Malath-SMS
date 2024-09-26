@@ -5,7 +5,7 @@ namespace Alaaelsaid\LaravelMalathSms\Facade;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static send($number, $message)
+ * @method static send(string|array $number, string $message)
  *
  * @see SmsProcess
  */
